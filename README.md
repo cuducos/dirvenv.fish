@@ -16,9 +16,13 @@ For example, let's say you have a project in `~/my-project` with a _virtualenv_ 
 
 ## Features
 
-### It looks for `venv` and `.venv`
+### It looks for `venv` and `.venv`, but it is customizable
 
-In the future we can add a more (customizable) options, but by now these are the defaults.
+By default it will look for `.venv` or `venv`. But you can replace that with `DIRVENV_DIRS` environment variable. For example, if you want it to look for _virtualenv_ called `forty` or `two`:
+
+```fish
+set -x DIRVENV_DIRS forty,two
+```
 
 ### It only deactivates a _virtualenv_ that was activated automatically
 
@@ -31,6 +35,16 @@ For example, if you have `~/my-project/.venv` and you `cd ~/my-project/tests`, i
 ### It is session-aware
 
 If you have more than one shell, `dirvenv` from one shell will not mess up with the magic in the other shells.
+
+### You can ignore directories
+
+If you want `dirvenv` to ignore any directory, just use `DIRVENV_IGNORE` with full paths to the directories. For example:
+
+```fish
+set -x DIRVENV_IGNORE /not/my/monkeys,/not/my/circus
+```
+
+From now on, `dirvenv` will ignore any action in both these directories and their sub-directories. 
 
 ## Install
 
@@ -48,7 +62,7 @@ $ curl https://raw.githubusercontent.com/cuducos/dirvenv.fish/refs/heads/main/in
 
 ### Uninstall
 
-Similarly, just remove `dirvenv.fish` from `~/.config/fish/conf.d` and `~/config/fish/functions` or use the [`uninstall.fish`](./uninstall.fish) script:
+There is an [`uninstall.fish`](./uninstall.fish) script for that:
 
 ```console
 $ curl -LO https://raw.githubusercontent.com/cuducos/dirvenv.fish/refs/heads/main/uninstall.fish
