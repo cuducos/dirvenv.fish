@@ -40,7 +40,7 @@ Probably it works with [Fisher](https://github.com/jorgebucaran/fisher), but I h
 $ fisher install cuducos/dirvenv.fish
 ```
 
-Alternatively you can use the `install.fish` script:
+Alternatively you can use the [`install.fish`](./install.fish) script:
 
 ```console
 $ curl https://raw.githubusercontent.com/cuducos/dirvenv.fish/refs/heads/main/install.fish | source
@@ -48,7 +48,7 @@ $ curl https://raw.githubusercontent.com/cuducos/dirvenv.fish/refs/heads/main/in
 
 ### Uninstall
 
-Similarly, just remove `dirvenv.fish` from `~/.config/fish/conf.d` and `~/config/fish/functions` or use the `uninstall.fish` script:
+Similarly, just remove `dirvenv.fish` from `~/.config/fish/conf.d` and `~/config/fish/functions` or use the [`uninstall.fish`](./uninstall.fish) script:
 
 ```console
 $ curl -LO https://raw.githubusercontent.com/cuducos/dirvenv.fish/refs/heads/main/uninstall.fish
