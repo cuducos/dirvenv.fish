@@ -13,20 +13,20 @@ end
 
 
 function dirvenv -d "Toggles the virtualenv detected by `dirvenv` on and off"
-    set -f activated (string join / (path normalize (string length -q "$TMPDIR" && echo $TMPDIR || echo /tmp) ) ".direnv.$fish_pid")
     set -f venv (find_venv)
+    set -f activated (string join / (path normalize (string length -q "$TMPDIR" && echo $TMPDIR || echo /tmp) ) ".direnv")
     if set -q VIRTUAL_ENV
         if test -z "$venv" && test -e $activated
-            if string match -q "$VIRTUAL_ENV" (cat "$activated")
+            if string match -q "$fish_pid:$VIRTUAL_ENV" (cat "$activated")
                 deactivate
-                rm "$activated"
+                cat "$activated" | string match -v "$fish_pid:$VIRTUAL_ENV" >$activated
             end
         end
     else
         set -l activate "$venv/bin/activate.fish"
         if test -n "$venv" && test -f "$activate"
             source "$activate"
-            echo "$VIRTUAL_ENV" >"$activated"
+            echo "$fish_pid:$VIRTUAL_ENV" >>"$activated"
         end
     end
 end
