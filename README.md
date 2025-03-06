@@ -6,7 +6,7 @@
 
 For example, let's say you have a project in `~/my-project` with a _virtualenv_ inside:
 
-```console
+```fish
 ~ $  # note that no virtualenv is active
 ~ $ cd ~/my-project
 (.venv) my-project $  # note that the virtualenv was activated
