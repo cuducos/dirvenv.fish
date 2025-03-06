@@ -51,7 +51,9 @@ $ curl https://raw.githubusercontent.com/cuducos/dirvenv.fish/refs/heads/main/in
 Similarly, just remove `dirvenv.fish` from `~/.config/fish/conf.d` and `~/config/fish/functions` or use the `uninstall.fish` script:
 
 ```console
-$ curl https://raw.githubusercontent.com/cuducos/dirvenv.fish/refs/heads/main/uninstall.fish | source
+$ curl -LO https://raw.githubusercontent.com/cuducos/dirvenv.fish/refs/heads/main/uninstall.fish
+$ source uninstall.fish
+$ rm uninstall.fish
 ```
 
 ## Acknowledgements
