@@ -40,21 +40,18 @@ Probably it works with [Fisher](https://github.com/jorgebucaran/fisher), but I h
 $ fisher install cuducos/dirvenv.fish
 ```
 
-Alternatively you can just copy the `dirvenv.fish` files to your `~/.config/fish/conf.d` and `~/config/fish/functions`, or clone and use the included scripts:
+Alternatively you can use the `install.fish` script:
 
 ```console
-$ git clone https://github.com/cuducos/dirvenv.fish
-$ cd dirvenv.fish
-$ source install.fish
-$ rm -rf ../dirvenv.fish
+$ curl https://raw.githubusercontent.com/cuducos/dirvenv.fish/refs/heads/main/install.fish | source
 ```
 
 ### Uninstall
 
-Similarly, just remove `dirvenv.fish` from `~/.config/fish/conf.d` and `~/config/fish/functions` or repeat the steps above but use:
+Similarly, just remove `dirvenv.fish` from `~/.config/fish/conf.d` and `~/config/fish/functions` or use the `uninstall.fish` script:
 
 ```console
-$ source uninstall.fish
+$ curl https://raw.githubusercontent.com/cuducos/dirvenv.fish/refs/heads/main/uninstall.fish | source
 ```
 
 ## Acknowledgements
