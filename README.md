@@ -4,7 +4,7 @@
 
 > :warning: This is a Fish shell script, it will not work on Bash or Zsh.
 
-For example, let's you have a project in `~/my-project` with a _virtualenv_ inside:
+For example, let's say you have a project in `~/my-project` with a _virtualenv_ inside:
 
 ```console
 ~ $  # note that no virtualenv is active
@@ -54,7 +54,7 @@ $ rm -rf ../dirvenv.fish
 Similarly, just remove `dirvenv.fish` from `~/.config/fish/conf.d` and `~/config/fish/functions` or repeat the steps above but use:
 
 ```console
-$ source uninstall
+$ source uninstall.fish
 ```
 
 ## Acknowledgements
