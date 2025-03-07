@@ -22,13 +22,11 @@ function find_venv -d "Recursively looks for virtualenvs up in the directory tre
     end
 end
 
-
 function dirvenv -d "Toggles the virtualenv detected by `dirvenv` on and off"
     set -f venv (find_venv)
     set -f activated (string join / (path normalize (string length -q "$TMPDIR" && echo "$TMPDIR" || echo /tmp) ) ".direnv")
-    
     if set -q VIRTUAL_ENV
-        if test -z "$venv" || test "$venv/bin/activate.fish" != "$VIRTUAL_ENV/bin/activate.fish"
+        if test -z "$venv" || test "$venv" != "$VIRTUAL_ENV"
             if test -e $activated
                 if string match -q "$fish_pid:$VIRTUAL_ENV" (cat "$activated")
                     deactivate
@@ -39,7 +37,6 @@ function dirvenv -d "Toggles the virtualenv detected by `dirvenv` on and off"
             return 0
         end
     end
-    
     if test -n "$venv"
         set -l activate "$venv/bin/activate.fish"
         if test -f "$activate"
